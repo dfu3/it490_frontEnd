@@ -135,6 +135,7 @@ function draw_chart(chartVals) {
 		'chartArea': {'width': '75%', 'height': '75%'},
 		legend: {position: 'none'},
 		hAxis: { textStyle: {color: '#FFF'} },
+		animation: {startup: 'true'},
 
 	};
 
@@ -169,27 +170,27 @@ $listReq = array();
 $listReq['type'] = "get_curr_list";
 $list = $client->send_request($listReq);
 
-$page.= "<select id='mySelect'>";
-$page.= "<option selected disabled>Select Base Currency</option>";
+$sel = "";
+$sel.= "<select id='mySelect'>";
+$sel.= "<option selected disabled>Select Base Currency</option>";
 $ind = 0;
 foreach($list as $arr)
 {
-	$page.= "<option>$arr</option>";
+	$sel.= "<option>$arr</option>";
 	$ind++;
 }
+$sel.= "</select>";
 
-echo "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
-$page.= "</select>
-<br><br>";
-echo "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
-echo "<input type='button' onclick='postValue()' style='float:right' value='APPLY'>";
+//echo "<br><br>";
+$sel.= "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+$sel.= "<input type='button' onclick='postValue()' value='APPLY'>";
 
-$page.= "<h4>Base: " . $base . "</h4><br><br><br>";
+$page.= "<h4>Base: " . $base . "</h4>";
 echo $page;
 
 //$page.= $table;
 
-
+echo "<div id='sel' style='position:relative;left:400px;top:50px;'>$sel</div>";
 echo "<div id='table'>$table</div>";
 
 //echo "<br><br>";
