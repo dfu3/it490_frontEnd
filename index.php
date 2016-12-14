@@ -124,18 +124,21 @@ function drawTrendlines() {
 function draw_chart(chartVals) {
 
 	var data = new google.visualization.arrayToDataTable((chartVals));
+	var tit = '[' + chartVals[0][0] + ' / ' + chartVals[0][1] + ']    History';
 
 	var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
 	var options = {
-		title: 'USD / EUR',
 
-       'width': 650,
-       'height': 400,
-       'chartArea': {'width': '75%', 'height': '75%'},
-       'legend': {'position': 'top', 'alignment' : 'center'},
+		'title': '',
+		'width': 650,
+		'height': 400,
+		'chartArea': {'width': '75%', 'height': '75%'},
+		legend: {position: 'none'},
+		hAxis: { textStyle: {color: '#FFF'} },
 
 	};
 
+	options['title'] = tit;
 	chart.draw(data, options);
 }
 
@@ -190,7 +193,7 @@ echo $page;
 echo "<div id='table'>$table</div>";
 
 //echo "<br><br>";
- echo "<div id='chart_div' style='position:relative;left:600px;top:150px;'></div>";
+ echo "<div id='chart_div' style='position:relative;left:650px;top:150px;'></div>";
 
 //////////////////////////////////////////////////////////
 
@@ -250,7 +253,7 @@ echo "
 	
 <script>
 
-  var table = document.getElementById('exRates');
+var table = document.getElementById('exRates');
     if (table != null) {
         for (var i = 0; i < table.rows.length; i++) {
             for (var j = 0; j < table.rows[i].cells.length; j++)
@@ -260,15 +263,16 @@ echo "
         }
     }
 
-    function tableText(tableCell) {
+function tableText(tableCell) {
 
-    	if(isNaN(tableCell.innerHTML))
-    	{
-    		document.getElementById('curr2').value = tableCell.innerHTML;
-    		drawTrendlines();
-    	}
-    	
-    }
+	if(isNaN(tableCell.innerHTML))
+	{
+		document.getElementById('curr2').value = tableCell.innerHTML;
+		drawTrendlines();
+	}
+	
+}
+
 
 </script>
 
