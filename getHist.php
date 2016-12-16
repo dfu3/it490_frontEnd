@@ -31,7 +31,17 @@ $values = array(
     array('7', 0),
     array('8', 0),
     array('9', 0),
-    array('10', 0)
+    array('10', 0),
+    array('11', 0),
+    array('12', 0),
+    array('13', 0),
+    array('14', 0),
+    array('15', 0),
+    array('16', 0),
+    array('17', 0),
+    array('18', 0),
+    array('19', 0),
+    array('20', 0)
 );
 
 for ($i = 0; $i < count($values); $i++) {
@@ -45,33 +55,5 @@ for ($i = 0; $i < count($values); $i++) {
 
 echo json_encode($values);
 exit;
-
-/*
-	$values = array(
-        array($curr1, $curr2),
-        array('1'),
-        array('2'),
-        array('3'),
-        array('4'),
-        array('5'),
-        array('6'),
-        array('7'),
-        array('8'),
-        array('9'),
-        array('10')
-    );
-
-	$first = True;
-	$i = 0;
-	foreach ($values as $point)
-	{
-		if(!$first)
-		{
-			array_push($point, floatval($list[$i]));
-			//$value[1] = floatval($list[$i]);
-			$i++; 
-		}
-		$first = False;
-	}*/
 
 ?>

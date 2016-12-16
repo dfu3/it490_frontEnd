@@ -35,7 +35,7 @@ echo "          <li class=\"active\"><a target=\"_blank\" class=\"theFade\" href
 echo "          <li><a target=\"_blank\" class=\"theFade\" href=\"http://www.dowjones.com/\">Dow Jones</a></li>";
 echo "          <li><a target=\"_blank\" class=\"theFade\" href=\"http://www.nasdaq.com/\">NASDAQ</a></li>";
 echo "          <li><a target=\"_blank\" class=\"theFade\" href=\"http://money.cnn.com/data/markets/sandp/\">S&P 500</a></li>";
-echo "          <li><a class=\"theFade\" href=\"login.html\">Log Out</a></li>";
+echo "          <li><a class=\"theFade\" href=\"logout.php\">Log Out</a></li>";
 echo "        </ul>";
 echo "      </div>";
 echo "    </div>";

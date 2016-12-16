@@ -32,7 +32,7 @@ echo "        <a class=\"navbar-brand spafin theFade \" href=\"http://somethingp
 echo "      </div>";
 echo "      <div class=\"collapse navbar-collapse navbar-right allowUnderline\" id=\"myNavbar\">";
 echo "        <ul class=\"nav navbar-nav\">";
-echo "          <li class=\"active\"><a target=\"_blank\" class=\"theFade\" href=\"aboutus.html\">About Us</a></li>";
+echo "          <li class=\"active\"><a target=\"_blank\" class=\"theFade\" href=\"aboutus.html\">Contact Us</a></li>";
 echo "          <li><a target=\"_blank\" class=\"theFade\" href=\"http://www.dowjones.com/\">Dow Jones</a></li>";
 echo "          <li><a target=\"_blank\" class=\"theFade\" href=\"http://www.nasdaq.com/\">NASDAQ</a></li>";
 echo "          <li><a target=\"_blank\" class=\"theFade\" href=\"http://money.cnn.com/data/markets/sandp/\">S&P 500</a></li>";
@@ -85,16 +85,28 @@ else
 	exit();
 }
 
+//gets the table of user positions
 $profReq['type'] = "get_user_pos";
 $profReq['username'] = $user;
 $table = $client->send_request($profReq);
 
 $page = "<h1> Profile </h1> <br>";
 $page.= "<hr>";
-$page.= "<h3> $user" . "'s Positions </h3> <br><br>";
-$page.= $table;
+$page.= "<h3> Your Positions </h3> <br><br>";
 
 echo $page;
+echo "<div id='table' style='position:relative;left:200px;top:0px;'> $table </div>";
+echo "<br>";
+
+//gets trading suggetions
+$client = new rabbitMQClient("testRabbitMQ.ini","testServer");
+$suggReq = array();
+$suggReq['type'] = "suggest";
+$suggReq['username'] = $user;
+$sugg = $client->send_request($suggReq);
+echo "<div id='sugg' style='position:relative;left:200px;'> $sugg </div>";
+
+
 
 
 //////////////////////////////////////////////////////////
