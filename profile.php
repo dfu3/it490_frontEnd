@@ -28,7 +28,7 @@ echo "          <span class=\"underline-bar\"></span>";
 echo "          <span class=\"underline-bar\"></span>";
 echo "          <span class=\"underline-bar\"></span>";
 echo "        </button>";
-echo "        <a class=\"navbar-brand spafin theFade \" href=\"http://somethingpatheticallyawful.com/\">Spafin</a>";
+echo "        <a class=\"navbar-brand spafin theFade \" href=\"http://somethingpatheticallyawful.com/\">Spafin &copy;</a>";
 echo "      </div>";
 echo "      <div class=\"collapse navbar-collapse navbar-right allowUnderline\" id=\"myNavbar\">";
 echo "        <ul class=\"nav navbar-nav\">";
@@ -48,6 +48,7 @@ echo "  <div class=\"skewContainer\">";
 echo "    <div class=\"body-container\">";
 echo "";
 echo "      <div class=\"container text-center\">";
+echo "<div id=\"earth\"></div>";
 echo "        <h1>Spafin</h1><br><br>";
 if (isset($_SESSION["USER"]))
 	{
@@ -98,13 +99,13 @@ echo $page;
 echo "<div id='table' style='position:relative;left:200px;top:0px;'> $table </div>";
 echo "<br>";
 
-//gets trading suggetions
+/*//gets trading suggetions
 $client = new rabbitMQClient("testRabbitMQ.ini","testServer");
 $suggReq = array();
 $suggReq['type'] = "suggest";
 $suggReq['username'] = $user;
 $sugg = $client->send_request($suggReq);
-echo "<div id='sugg' style='position:relative;left:200px;'> $sugg </div>";
+echo "<div id='sugg' style='position:relative;left:200px;'> $sugg </div>";*/
 
 
 

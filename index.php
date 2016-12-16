@@ -1,5 +1,6 @@
 <?php
 session_start();
+
 echo '<title>Spafin</title>';
 
 // FONTS
@@ -27,7 +28,7 @@ echo "          <span class=\"underline-bar\"></span>";
 echo "          <span class=\"underline-bar\"></span>";
 echo "          <span class=\"underline-bar\"></span>";
 echo "        </button>";
-echo "        <a class=\"navbar-brand spafin theFade \" href=\"http://somethingpatheticallyawful.com/\">Spafin</a>";
+echo "        <a class=\"navbar-brand spafin theFade \" href=\"http://somethingpatheticallyawful.com/\">Spafin &copy;</a>";
 echo "      </div>";
 echo "      <div class=\"collapse navbar-collapse navbar-right allowUnderline\" id=\"myNavbar\">";
 echo "        <ul class=\"nav navbar-nav\">";
@@ -47,6 +48,7 @@ echo "  <div class=\"skewContainer\">";
 echo "    <div class=\"body-container\">";
 echo "";
 echo "      <div class=\"container text-center\">";
+echo "<div id=\"earth\"></div>";
 echo "        <h1>Spafin</h1><br><br>";
 if (isset($_SESSION["USER"]))
 	{

@@ -34,7 +34,7 @@ session_destroy();
           <span class="underline-bar"></span>
           <span class="underline-bar"></span>
         </button>
-        <a class="navbar-brand spafin theFade " href="http://somethingpatheticallyawful.com/">Spafin</a>
+        <a class="navbar-brand spafin theFade " href="http://somethingpatheticallyawful.com/">Spafin &copy;</a>
       </div>
 
 <!-- if (isset($_SESSION["USER"]))
@@ -49,7 +49,7 @@ session_destroy();
           <li><a target="_blank" class="theFade" href="http://www.dowjones.com/">Dow Jones</a></li>
           <li><a target="_blank" class="theFade" href="http://www.nasdaq.com/">NASDAQ</a></li>
           <li><a target="_blank" class="theFade" href="http://money.cnn.com/data/markets/sandp/">S&P 500</a></li>
-          <li><a class=\"theFade\" href=\"logout.php\">Log Out</a></li>";
+          <li><a class="theFade" href="logout.php">Log Out</a></li>";
         </ul>
       </div>
     </div>
@@ -61,6 +61,7 @@ session_destroy();
     <div class="body-container">
 
       <div class="container text-center">
+      <div id="earth"></div>
         <h1>Spafin</h1>
       </div>
     </div>
@@ -76,7 +77,7 @@ session_destroy();
 <h3><br>Log in to your Account</h3>
 
   <div class= "fieldtitles">
-    <div class= "title"></div>
+
       <input type="text" name="username" size="15"
       autocomplete="off" 
       required
@@ -84,17 +85,17 @@ session_destroy();
       placeholder="User Name"
       > 
   
-  <br>
+  <br></br>
   
   <div class= "fieldtitles">
-    <div class= "title"></div>
+    
       <input type="password" name="password" size="15"
       autocomplete="off" 
       required
       autofocus="on"
       placeholder="Password"
       >  
-  
+ </div>
   <br>
 
   <br><br>
@@ -106,7 +107,7 @@ session_destroy();
   
   <div class= "buttons">  
     <input type="submit" class="buttons" value="Submit" name="submit"> 
-
+ <br><br>
   <div class= "buttons">
     <input type="submit" class="buttons" value="Register" name="register" onclick=location.href="register.html">
 </div></div></div></div>
